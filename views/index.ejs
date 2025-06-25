@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Shop</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <img src="/images/header.png" alt="Sweet Shop Header" class="header-image">
+    <h1>Products</h1>
+    <% if (user) { %>
+      <div class="user-info">
+        Welcome, <%= user.username %>! <a href="/logout" class="button">Logout</a>
+        <a href="/cart" class="button">Cart</a>
+      </div>
+    <% } else { %>
+      <div class="auth-links">
+        <a href="/login">Login</a>
+      </div>
+    <% } %>
+
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+          <span><%= product.name %> - ¥<%= product.price %></span>
+          <form action="/cart" method="POST" style="display: inline;">
+            <input type="hidden" name="productId" value="<%= product.id %>">
+            <button type="submit">Add to Cart</button>
+          </form>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>

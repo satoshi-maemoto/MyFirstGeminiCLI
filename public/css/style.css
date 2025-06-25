@@ -1,0 +1,88 @@
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-color: #fce4ec; /* 薄いピンク */
+  color: #4e342e; /* 焦げ茶色 */
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #d81b60; /* 濃いピンク */
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.header-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff9c4; /* 薄い黄色 */
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button, a.button {
+  background-color: #ff80ab; /* 明るいピンク */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover, a.button:hover {
+  background-color: #f06292; /* 少し濃いピンク */
+}
+
+input[type="text"], input[type="password"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f8bbd0; /* 薄いピンクの枠線 */
+  border-radius: 5px;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.auth-links a {
+  color: #d81b60;
+  text-decoration: none;
+}
+
+.user-info {
+  text-align: right;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Shopping Cart</h1>
+    <% if (user) { %>
+      <div class="user-info">
+        Welcome, <%= user.username %>! <a href="/logout" class="button">Logout</a>
+      </div>
+    <% } else { %>
+      <div class="auth-links">
+        <a href="/login">Login</a>
+      </div>
+    <% } %>
+
+    <% if (cart.length > 0) { %>
+      <ul>
+        <% cart.forEach(item => { %>
+          <li><%= item.name %> - ¥<%= item.price %></li>
+        <% }); %>
+      </ul>
+      <form action="/checkout" method="POST">
+        <button type="submit">Checkout</button>
+      </form>
+    <% } else { %>
+      <p>Your cart is empty.</p>
+    <% } %>
+
+    <div class="auth-links">
+      <a href="/">Back to Shop</a>
+    </div>
+  </div>
+</body>
+</html>
