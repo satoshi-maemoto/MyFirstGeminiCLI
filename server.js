@@ -24,8 +24,8 @@ const products = [
 ];
 
 // Routes
-const authRoutes = require('./routes/auth');
-const shopRoutes = require('./routes/shop');
+const authRoutes = require('./routes/auth')(users);
+const shopRoutes = require('./routes/shop')(products);
 
 app.use(authRoutes);
 app.use(shopRoutes);

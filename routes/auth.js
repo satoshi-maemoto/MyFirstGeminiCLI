@@ -4,7 +4,7 @@ module.exports = function(users) {
   const router = express.Router();
 
   router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', { error: req.query.error });
   });
 
   router.post('/login', (req, res) => {
@@ -14,7 +14,7 @@ module.exports = function(users) {
       req.session.user = user;
       res.redirect('/');
     } else {
-      res.redirect('/login');
+      res.redirect('/login?error=1');
     }
   });
 
