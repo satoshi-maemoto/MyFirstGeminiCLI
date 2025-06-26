@@ -7,6 +7,15 @@ services:
     volumes:
       - .:/usr/src/app
       - node_modules:/usr/src/app/node_modules
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
 
 volumes:
   node_modules:
+  mongo-data:

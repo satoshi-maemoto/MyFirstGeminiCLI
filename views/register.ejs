@@ -8,13 +8,16 @@
 <body>
   <div class="container">
     <h1>Register</h1>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <p class="error-message">ユーザー登録に失敗しました。ユーザー名が既に存在している可能性があります。</p>
+    <% } %>
     <form action="/register" method="POST">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Register</button>
     </form>
     <div class="auth-links">
-      <a href="/login">Login</a>
+      <a href="/login">Login</a> | <a href="/">Top</a>
     </div>
   </div>
 </body>

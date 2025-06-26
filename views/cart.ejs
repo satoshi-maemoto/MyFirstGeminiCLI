@@ -21,18 +21,26 @@
     <% if (cart.length > 0) { %>
       <ul>
         <% cart.forEach(item => { %>
-          <li><%= item.name %> - ¥<%= item.price %></li>
+          <li>
+            <%= item.name %> - ¥<%= item.price %>
+            <form action="/cart/delete/<%= item._id %>" method="POST" style="display:inline;">
+              <button type="submit">削除</button>
+            </form>
+          </li>
         <% }); %>
       </ul>
       <form action="/checkout" method="POST">
         <button type="submit">Checkout</button>
+      </form>
+      <form action="/cart/clear" method="POST" style="margin-top: 10px;">
+        <button type="submit">カートを空にする</button>
       </form>
     <% } else { %>
       <p>Your cart is empty.</p>
     <% } %>
 
     <div class="auth-links">
-      <a href="/">Back to Shop</a>
+      <a href="/">Top</a>
     </div>
   </div>
 </body>
